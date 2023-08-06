@@ -9,6 +9,16 @@
         "position": ""
       },
       "id": 22
+    },
+    {
+      "detailsPerson": {
+        "name": "Yoannet",
+        "lastName": "Díaz Valdés",
+        "email": "yoannet93@gmail.com",
+        "years": "",
+        "position": "full-stack"
+      },
+      "id": 23
     }
   ]
 }
