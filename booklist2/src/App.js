@@ -36,8 +36,8 @@ function App() {
     setBookList(newBookList);
   };
 
-  const organize = (criteriaSort) => {
-    const newBookList = [...library];
+  const organize = (criteriaSort, value) => {
+    const newBookList = [...value];
     if (criteriaSort === "az") {
       newBookList.sort((a, b) => a.book.title.localeCompare(b.book.title));
     } else if (criteriaSort === "za") {
@@ -52,8 +52,8 @@ function App() {
   }
 
   return (
-    <div className="grid grid-cols-4 gap-y-5 w-4/5 m-auto">
-      <div className="col-span-4">
+    <div className="grid grid-cols-5 gap-y-5 w-10/12 m-auto">
+      <div className="col-span-5">
         <Header />
       </div>
       <div className="col-span-1">
@@ -65,7 +65,7 @@ function App() {
           clear={clear}
         />
       </div>
-      <div className="col-span-3">
+      <div className="col-span-4">
         <BookList value={booklist} organize={organize} />
       </div>
     </div>

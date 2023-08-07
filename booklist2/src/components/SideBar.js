@@ -37,12 +37,15 @@ const handleClear=()=>{
   clear()
 }
   return (
-    <div>
+    <div className="mt-5">
       <div>
         <div className="mb-5 ">
-          <select onChange={handleSelection}>
+          <select
+            className="font-bold border rounded bg-slate-200"
+            onChange={handleSelection}
+          >
             <option value="0">Search a book By</option>
-            <option value="title">title</option>
+            <option value="title">Title</option>
             <option value="year">Year</option>
             <option value="ISBN">ISBN</option>
             <option value="author">Author</option>
@@ -72,7 +75,10 @@ const handleClear=()=>{
         <h2 className="font-bold">Filter By Genre</h2>
         <ul className="text-slate-500">{renderedGenre}</ul>
       </div>
-      <button onClick={handleClear} className="bg-red-600 text-white rounded mt-5 py-1 px-2">
+      <button
+        onClick={handleClear}
+        className="bg-red-600 text-white rounded mt-5 py-1 px-2"
+      >
         Clear All Filters
       </button>
     </div>

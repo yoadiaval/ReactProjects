@@ -11,7 +11,7 @@ function BookList({ value, organize }) {
   });
 
   const handleClick = (event) => {
-    organize(event.target.value);
+    organize(event.target.value, value);
   };
   return (
     <div>
@@ -26,7 +26,7 @@ function BookList({ value, organize }) {
           <option value="za">Title(Z-A)</option>
         </select>
       </div>
-      <div className="flex flex-wrap h-full">{renderedList}</div>;
+      <div className="flex flex-wrap h-full mt-5">{renderedList}</div>;
     </div>
   );
 }

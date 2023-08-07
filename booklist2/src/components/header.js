@@ -1,7 +1,7 @@
 function Header(){
     return (
       <div>
-        <div className="w-full h-14 flex items-center space-x-28">
+        <div className="w-full h-20 flex items-center space-x-28">
           <h1 className="w-2/5 font-bold text-2xl">Book Lover</h1>
           <div>
             <ul className="flex space-x-4 text-slate-500">
