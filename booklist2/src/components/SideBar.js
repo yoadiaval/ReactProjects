@@ -1,64 +1,78 @@
 import { useState } from "react";
 
-function SideBar({ value, onSubmit, onChange, onChangeNumPages }) {
-  const [title, setTitle] = useState("");
+function SideBar({ genre, onSubmit, onChange, onChangeNumPages, clear }) {
+  const [value, setvalue] = useState("");
+  const [placeHolder, setPlaceHolder] = useState("")
 
-  //****NO funciona aun****//
+  
   const [numPages, setNumPages] = useState(1200);
   const HandleNumPages = (event) => {
     setNumPages(event.target.value);
-  };
-  const handleSubmitNumPages = (event) => {
-    event.preventDefault();
     onChangeNumPages(numPages);
   };
-  //***********************//
+  
 
   const HandlChange = (event) => {
-    setTitle(event.target.value);
+    setvalue(event.target.value);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    onSubmit(title);
+    onSubmit(value,placeHolder);
   };
 
-  const renderedGenre = value.map((genre) => {
+  const renderedGenre = genre.map((genre) => {
     return <li onClick={() => onChange(genre)}>{genre}</li>;
   });
 
+const handleSelection=(event)=>{
+const newPlaceHolder = event.target.value;
+setPlaceHolder(newPlaceHolder);
+}
+
+const handleClear=()=>{
+  setvalue("")
+  setPlaceHolder("")
+  setNumPages(1200)
+  clear()
+}
   return (
     <div>
       <div>
         <div className="mb-5 ">
-          <select>
+          <select onChange={handleSelection}>
             <option value="0">Search a book By</option>
-            <option value="title">Title</option>
+            <option value="title">title</option>
             <option value="year">Year</option>
-            <option value="isbm">ISBN</option>
+            <option value="ISBN">ISBN</option>
             <option value="author">Author</option>
           </select>
           <form onSubmit={handleSubmit}>
             <input
-              value={title}
+              placeholder={`Enter: ${placeHolder}`}
+              value={value}
               onChange={HandlChange}
-              className="border rounded"
+              className="mt-2 border rounded"
             />
           </form>
         </div>
         <div className="mb-5">
           <h3 className="font-bold">Filter by Page</h3>
-
-          <form onSubmit={handleSubmitNumPages}>
-            <input type="range" value={numPages} onChange={HandleNumPages} />
-          </form>
+          <input
+            type="range"
+            min="0"
+            max="1200"
+            value={numPages}
+            onChange={HandleNumPages}
+          />
+          <p>Valor actual: {numPages}</p>
         </div>
       </div>
       <div className="mb-5">
         <h2 className="font-bold">Filter By Genre</h2>
         <ul className="text-slate-500">{renderedGenre}</ul>
       </div>
-      <button className="bg-red-600 text-white rounded mt-5 py-1 px-2">
+      <button onClick={handleClear} className="bg-red-600 text-white rounded mt-5 py-1 px-2">
         Clear All Filters
       </button>
     </div>

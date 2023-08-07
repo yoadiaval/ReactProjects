@@ -13,6 +13,10 @@ function BookCard({ value }) {
       <div className="font-bold">{value.book.title}</div>
       <div>{value.book.author.name}</div>
       <div className="text-slate-500">{value.book.genre}</div>
+      <div className="flex space-x-2 mt-2">
+        <button className="bg-slate-950 text-white rounded px-2">Details</button>
+        <button className="bg-teal-600 text-white rounded px-2">Add</button>
+      </div>
     </div>
   );
 }
