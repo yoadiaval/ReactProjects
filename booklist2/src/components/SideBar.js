@@ -1,63 +1,60 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import BooksContext from "../context/Books";
 
-function SideBar({ genre, onSubmit, onChange, onChangeNumPages, clear }) {
-  const [value, setvalue] = useState("");
-  const [placeHolder, setPlaceHolder] = useState("")
-
-  
+function SideBar() {
+  const { genre, FilterGenre, FilterByPage, FilterBySelection, clear } =
+    useContext(BooksContext);
+  const renderedGenre = genre.map((genre) => {
+    return (
+      <li onClick={() => FilterGenre(genre)}>
+        <div>{genre}</div>
+      </li>
+    );
+  });
   const [numPages, setNumPages] = useState(1200);
+  const [valueSelection, setValueSelection] = useState("");
+  const [placeHolder, setPlaceHolder] = useState("Nothing selected");
+
   const HandleNumPages = (event) => {
     setNumPages(event.target.value);
-    onChangeNumPages(numPages);
+    FilterByPage(numPages);
   };
-  
+
+  const handleSelection = (event) => {
+    const newPlaceHolder = event.target.value;
+    setPlaceHolder(newPlaceHolder);
+  };
 
   const HandlChange = (event) => {
-    setvalue(event.target.value);
+    setValueSelection(event.target.value);
+    FilterBySelection(event.target.value, placeHolder);
   };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    onSubmit(value,placeHolder);
+  const handleClear = () => {
+    setValueSelection("");
+    setPlaceHolder("");
+    setNumPages(1200);
+    clear();
   };
-
-  const renderedGenre = genre.map((genre) => {
-    return <li onClick={() => onChange(genre)}>{genre}</li>;
-  });
-
-const handleSelection=(event)=>{
-const newPlaceHolder = event.target.value;
-setPlaceHolder(newPlaceHolder);
-}
-
-const handleClear=()=>{
-  setvalue("")
-  setPlaceHolder("")
-  setNumPages(1200)
-  clear()
-}
   return (
     <div className="mt-5">
       <div>
         <div className="mb-5 ">
           <select
-            className="font-bold border rounded bg-slate-200"
             onChange={handleSelection}
+            className="font-bold border rounded bg-slate-200"
           >
-            <option value="0">Search a book By</option>
+            <option value="Nothing selected">Search a book By</option>
             <option value="title">Title</option>
             <option value="year">Year</option>
             <option value="ISBN">ISBN</option>
             <option value="author">Author</option>
           </select>
-          <form onSubmit={handleSubmit}>
-            <input
-              placeholder={`Enter: ${placeHolder}`}
-              value={value}
-              onChange={HandlChange}
-              className="mt-2 border rounded"
-            />
-          </form>
+          <input
+            onChange={HandlChange}
+            placeholder={`Enter: ${placeHolder}`}
+            value={valueSelection}
+            className="mt-2 border rounded"
+          />
         </div>
         <div className="mb-5">
           <h3 className="font-bold">Filter by Page</h3>
