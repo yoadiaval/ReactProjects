@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import ReactDOM from "react-dom";
 function Modal({ onClose, actionBar, children }) {
-  //este hook se utiliza para que se continue viendo el estilo del modal porque impide hace scroll hacia abajo 
+  //useEffect para impedir hace scroll hacia abajo 
   useEffect(() => {
     document.body.classList.add("overflow-hidden");
     return () => {

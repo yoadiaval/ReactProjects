@@ -150,24 +150,26 @@
      Es quien controla lo que en definitiva debe ir saliento en pantalla. se le pasa como prop el `path` e internamente en el *Route.js* si este path coincide con el que el usuario clickó pues se muestra en pantalla el hijo que en este caso es `<DropdownPage />`.
 
 10.  Modal Page
-      se trata de lapagina emergente que sale que bloquea todo el fondo.
-      La ilusion de que es otra ventana se la dan los estilos pero para que estos funcionen esimprescindible ubicar el contenedor del modal en una posicion específica dentro del DOM para evitar que cualquier cambio en la configuración de posicionamiento no afecte el comportamiento del modal.
+      -se trata de la pagina emergente que sale que bloquea todo el fondo.
+      -La ilusion de que es otra ventana se la dan los estilos pero para que estos funcionen es imprescindible ubicar el contenedor del modal en una posicion específica dentro del DOM para evitar que cualquier cambio en la configuración de posicionamiento no afecte el comportamiento del modal.
       Para ello se utiliza `React.DOM.createPortal`
 
       ```javascript
       ReactDOM.createPortal(
-        <div>//code...</div>,
+        <div>
+        //code...
+        </div>,
         document.querySelector(".modal-container")
       );
       ```
 
-      Este elemento tiene dos argumentos, uno de ellos es ele elemento que queremos posicionar y el otro un selector de clase (posicionado en el index.html justo antes de que cierre el body)
+      Este elemento tiene dos argumentos, uno de ellos es le elemento que queremos posicionar y el otro un selector de clase (ubicado en el index.html justo antes de que cierre el body)
 
       Notas importantes:
 
       - Posicionado `fixed` para el modal para que aun cuando se mueva de posicion en el código siga funcionando.
-      - Es necesario colocar un useEffect para en caso de que la p'agina tenga contenido como para ser scroll se le impida hacerlo una vez que est'e habilitado el modal
-      -
+      - Es necesario colocar un `useEffect` para en caso de que la página tenga contenido como para ser scroll se le impida hacerlo una vez que esté habilitado el modal
+      
 
       ```javascript
       useEffect(() => {
