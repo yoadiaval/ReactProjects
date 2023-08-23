@@ -39,6 +39,8 @@ const reducer = (state, action) => {
   }
 };
 
+
+
 function CounterPage({ initialCount }) {
 
   const [state, dispatch] = useReducer(reducer, {
@@ -87,7 +89,7 @@ function CounterPage({ initialCount }) {
       <form onSubmit={handleSubmit}>
         <label>Add a lot!</label>
         <input
-          value={state.valueToAdd || ""}
+          value={state.valueToAdd || ""} 
           onChange={handleChange}
           type="number"
           className="p-1 m-3 bg-gray-50 border bprder-gray-300"
