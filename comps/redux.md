@@ -166,3 +166,11 @@ const moviePlayList = useSelector((state) => {
   return state.movie;
 });
 ```
+
+## Aspectos a tener en cuenta
+
+-Teoria sobre como proceder de forma eficiente para modificar varios estados a la vez: UDEMY (Modern React with Redux ) 314 y 315 .
+
+-Estructura de las carpetas (functional, or por features). Udemy 319 (Modern React with Redux )
+\*recomendado hacerlo por functional aunque Redux recomiende por "features" porque Redux Toolkit da problema a veces con esta organización.
+\*\*\*NO RECOMENDABLE importar los reducers directamente en ell componente (ver video)

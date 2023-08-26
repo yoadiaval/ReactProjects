@@ -1,41 +1,20 @@
-import {configureStore, createSlice} from "@reduxjs/toolkit"
+import { configureStore} from "@reduxjs/toolkit";
+import { songsReducer, addSong, removeSong, resetSong } from "./slices/songSlice";
+import { moviesReducer, addMovie, removeMovie, resetMovie } from "./slices/movieSlice";
 
-
-/*
-Funcion del slice:
--define el estado inicial
--combina mini-reducers en un gran reducer
--crea un set de funciones "action creator" (estas funciones son las que dhacen que se retornen type='song/payload', esto esta por detras de escena no sobrepensarlo hace esto y ya esta)
-*/
-
-const songsSlice = createSlice({
-  name: "song",
-  initialState: [],
-  reducers: {
-    //'song' + '/' + 'addSong' = 'song/addSong' => type del dispatch
-    addSong(state, action) {
-      //STATE NO ALMACENA EL OBJETO STATE EN SU TOTALIDAD, SOLO CONTINE LA PARTE DEL STATE CON LA QUE SE EST'A TRABAJANDO EN ESTE CASO "song"
-      state.push(action.payload);
-    },
-    //'song' + '/' + 'removeSong' = 'song/removeSong' => type del dispatch
-    removeSong(state, action) {
-      const index = state.indexOf(action.payload);
-      state.splice(index,1);
-    },
-  },
-});
+//import { reset } from "./actions";  // recordar agregar reset al export
 
 //aqui es donde se difinen los states de mi app, songsSlice.reducer hace referencia al Slice donde se encuentran todos los microreducers.
 
 const store = configureStore({
-    reducer:{
-        songs: songsSlice.reducer
-    }
-})
-
+  reducer: {
+    songs: songsReducer,
+    movies: moviesReducer,
+  },
+});
 
 //--------------------------------------------------------------------
-console.log(songsSlice.actions.addSong()) // devuelve las funciones "action creator" que genera el slice, esta funcion espera recibir como variable el payload: actio(payload), esto es util porqeu devuelve la configuracion de type que generó el slice y el payload que tiene asignado {type: 'song/addSong', payload: undefined}. en este caso payload esta undefined porque no le pasé ningun valor. se usa como sigue.
+//console.log(songsSlice.actions.addSong()); // devuelve las funciones "action creator" que genera el slice, esta funcion espera recibir como variable el payload: actio(payload), esto es util porqeu devuelve la configuracion de type que generó el slice y el payload que tiene asignado {type: 'song/addSong', payload: undefined}. en este caso payload esta undefined porque no le pasé ningun valor. se usa como sigue.
 
 /*
 
@@ -51,12 +30,9 @@ store.dispatch(
 */
 
 /*
-const startingState = store.getState();
-console.log(JSON.stringify(startingState));
-
-const finalState = store.getState();
-console.log(JSON.stringify(finalState)); 
+console.log(JSON.stringify(store.getState())); //permite ver que hay en el state {songs:Array(0), movies:Array(0)} en este caso
 */
 
-export { store }
-export const { addSong, removeSong } = songsSlice.actions;
+export { store };
+export { addSong, removeSong, addMovie, removeMovie, resetMovie, resetSong } 
+
