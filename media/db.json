@@ -1,0 +1,52 @@
+{
+  "users": [
+    {
+      "name": "Susie Schuster",
+      "id": 4
+    },
+    {
+      "name": "Carmen Harris",
+      "id": 6
+    },
+    {
+      "name": "Janice Lesch",
+      "id": 7
+    },
+    {
+      "name": "Saul Strosin-Gleichner",
+      "id": 8
+    },
+    {
+      "name": "Vicky Shields",
+      "id": 9
+    },
+    {
+      "name": "William Ward",
+      "id": 10
+    },
+    {
+      "name": "Hattie Schimmel",
+      "id": 11
+    },
+    {
+      "name": "Carl Kessler",
+      "id": 12
+    },
+    {
+      "name": "Greg Carter",
+      "id": 13
+    },
+    {
+      "name": "Florence Spinka",
+      "id": 14
+    }
+  ],
+  "albums": [
+    {
+      "id": 10,
+      "title": "title del album",
+      "userid": 4
+    }
+  ],
+  "photos": []
+}
