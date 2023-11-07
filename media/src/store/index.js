@@ -18,4 +18,4 @@ setupListeners(store.dispatch); //para evitar repetir codigo o algo así precisa
 export * from "./thunk/fetchUsers";
 export * from './thunk/addUser';
 export * from './thunk/removeUser';
-export { useFetchAlbumsQuery } from "./apis/albumsApi"; //paso 8 de createApi exportar los hooks
+export { useFetchAlbumsQuery, useAddAlbumMutation } from "./apis/albumsApi"; //paso 8 de createApi exportar los hooks

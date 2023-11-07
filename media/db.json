@@ -46,6 +46,16 @@
       "id": 10,
       "title": "title del album",
       "userid": 4
+    },
+    {
+      "userId": 4,
+      "title": "Gorgeous Soft Bike",
+      "id": 11
+    },
+    {
+      "userId": 4,
+      "title": "Modern Granite Gloves",
+      "id": 12
     }
   ],
   "photos": []

@@ -66,7 +66,7 @@ contenido de *albumApi.js* completo
      
 ```
 
-1. Exportar los hooks que se han creado automáticamente.
+6. Exportar los hooks que se han creado automáticamente.
    
    ```javascript
       export const { useFetchAlbumsQuery } = albumsApi;
@@ -74,8 +74,8 @@ contenido de *albumApi.js* completo
 
    ```
     
-2. Conectar api al store (a traves del index.js dentro de la carpeta store). Especificar Reducer, middlewareand listeners.
-  Agregar a store/index.js las lineas señaladas
+7. Conectar api al store (a traves del index.js dentro de la carpeta store). Especificar Reducer, middlewareand listeners.
+  Agregar a store/index.js las lineas señaladas con -->
   
   ```javascript
     -->import {setupListeners} from '@reduxjs/toolkit/query';
@@ -97,12 +97,15 @@ contenido de *albumApi.js* completo
     export * from './thunk/addUser';
     export * from './thunk/removeUser';
 
-   --> export { useFetchAlbumsQuery } from "./apis/albumsApi"; //paso 8 de createApi exportar los hooks
+     --> export { useFetchAlbumsQuery } from "./apis/albumsApi"; //paso 8 de createApi exportar los hooks
 
   ```
    Dentro de 
  
-1. Export hooks desde store/index.js
-2.  Usar en el componente. 
+8. Export hooks desde store/index.js
+9.  Usar en el componente. 
+10. ´´´javascript
+11.     const {data, error, isLoading}=useFetchAlbumsQuery(user);
+12. ´´´ 
 
 Ejemplo: al crear un api llamado *fetchAlbums* se puede acceder al hook: *useFetchAlbumQuery* que es creado automáticamente
