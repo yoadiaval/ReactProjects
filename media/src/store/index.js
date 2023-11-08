@@ -13,9 +13,12 @@ export const store = configureStore({
   }, //middleware se relaciona con tratamiento de errores, debe ser incluido para que funciones correctamente.
 });
 
+
+//TEMPORARY
+window.store = store;
 setupListeners(store.dispatch); //para evitar repetir codigo o algo así precisar. tiene que ver con createApi.
 
 export * from "./thunk/fetchUsers";
 export * from './thunk/addUser';
 export * from './thunk/removeUser';
-export { useFetchAlbumsQuery, useAddAlbumMutation } from "./apis/albumsApi"; //paso 8 de createApi exportar los hooks
+export { useFetchAlbumsQuery, useAddAlbumMutation, useRemoveAlbumMutation } from "./apis/albumsApi"; //paso 8 de createApi exportar los hooks

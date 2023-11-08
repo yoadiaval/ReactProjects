@@ -43,19 +43,19 @@
   ],
   "albums": [
     {
-      "id": 10,
-      "title": "title del album",
-      "userid": 4
+      "userId": 4,
+      "title": "Luxurious Bronze Bike",
+      "id": 3
     },
     {
       "userId": 4,
-      "title": "Gorgeous Soft Bike",
-      "id": 11
+      "title": "Bespoke Cotton Cheese",
+      "id": 4
     },
     {
       "userId": 4,
-      "title": "Modern Granite Gloves",
-      "id": 12
+      "title": "Licensed Concrete Ball",
+      "id": 5
     }
   ],
   "photos": []
