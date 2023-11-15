@@ -17,6 +17,8 @@ const formSlice = createSlice({
       state.cost = action.payload;
     },
   },
+  //cdo se presione el botton de add form tiene que estar al tanto para limpiar los valores que est'an puestos en el input
+  
   extraReducers(builder){
     builder.addCase(addCar,(state,action)=>{
       state.name = " ";

@@ -2,6 +2,8 @@ import Button from "./Button";
 import { useRemoveAlbumMutation } from "../store";
 import ExpandablePanel from "./ExpandablePanel";
 import { BsTrash } from "react-icons/bs";
+import PhotosList from "./PhotosList";
+
 function AlbumListPanel({ album }) {
   const [removeAlbum, result] = useRemoveAlbumMutation();
   const handleRemoveAlbum = () => {
@@ -17,7 +19,7 @@ function AlbumListPanel({ album }) {
   );
   return (
     <ExpandablePanel key={album.id} header={header}>
-      List of photos in the album
+      <PhotosList album={album}/>
     </ExpandablePanel>
   );
 }

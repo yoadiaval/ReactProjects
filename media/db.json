@@ -1,40 +1,8 @@
 {
   "users": [
     {
-      "name": "Susie Schuster",
-      "id": 4
-    },
-    {
-      "name": "Carmen Harris",
-      "id": 6
-    },
-    {
-      "name": "Janice Lesch",
-      "id": 7
-    },
-    {
-      "name": "Saul Strosin-Gleichner",
-      "id": 8
-    },
-    {
       "name": "Vicky Shields",
       "id": 9
-    },
-    {
-      "name": "William Ward",
-      "id": 10
-    },
-    {
-      "name": "Hattie Schimmel",
-      "id": 11
-    },
-    {
-      "name": "Carl Kessler",
-      "id": 12
-    },
-    {
-      "name": "Greg Carter",
-      "id": 13
     },
     {
       "name": "Florence Spinka",
@@ -43,20 +11,66 @@
   ],
   "albums": [
     {
-      "userId": 4,
-      "title": "Luxurious Bronze Bike",
-      "id": 3
+      "userId": 9,
+      "title": "Sleek Concrete Car",
+      "id": 7
     },
     {
-      "userId": 4,
-      "title": "Bespoke Cotton Cheese",
-      "id": 4
+      "userId": 9,
+      "title": "Oriental Rubber Gloves",
+      "id": 8
     },
     {
-      "userId": 4,
-      "title": "Licensed Concrete Ball",
-      "id": 5
+      "userId": 9,
+      "title": "Generic Metal Hat",
+      "id": 9
+    },
+    {
+      "userId": 9,
+      "title": "Intelligent Wooden Computer",
+      "id": 10
+    },
+    {
+      "userId": 9,
+      "title": "Recycled Frozen Gloves",
+      "id": 11
     }
   ],
-  "photos": []
+  "photos": [
+    {
+      "albumId": 7,
+      "url": "https://loremflickr.com/150/150/abstract?lock=4991048654782464",
+      "id": 11
+    },
+    {
+      "albumId": 7,
+      "url": "https://loremflickr.com/150/150/abstract?lock=1526561090043904",
+      "id": 12
+    },
+    {
+      "albumId": 7,
+      "url": "https://loremflickr.com/150/150/abstract?lock=2016432086843392",
+      "id": 13
+    },
+    {
+      "albumId": 7,
+      "url": "https://loremflickr.com/150/150/abstract?lock=782734129627136",
+      "id": 14
+    },
+    {
+      "albumId": 8,
+      "url": "https://loremflickr.com/150/150/abstract?lock=3299843996909568",
+      "id": 15
+    },
+    {
+      "albumId": 8,
+      "url": "https://loremflickr.com/150/150/abstract?lock=176203050778624",
+      "id": 16
+    },
+    {
+      "albumId": 8,
+      "url": "https://loremflickr.com/150/150/abstract?lock=5277549823262720",
+      "id": 17
+    }
+  ]
 }

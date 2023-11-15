@@ -9,7 +9,7 @@ function CarList() {
     );
     return{
       cars: filteredCars,
-      name: form.name
+      name: form.name //esto se usa unicamente para lo de la funcionalidad del bold
     }
   });
 
